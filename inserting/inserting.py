@@ -9,7 +9,6 @@ def data_correcting(data):
         temp.append(title)
         temp += values
         data_to_insert.append(tuple(temp))
-    print(data_to_insert)
     data_inserting(data_to_insert)
 
 
@@ -18,7 +17,7 @@ def data_inserting(data_to_insert):
     connection = get_connection.config_reader("D:\RIAparser\database\config.json")
     cursor = connection.cursor()
     for news in data_to_insert:
-        print(news)
+        # print(news)
         cursor.execute(request, news)
     connection.commit()
     connection.close()

@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup as BS
-from inserting import inserting
 
 
 def main_info_taker():
@@ -16,9 +15,8 @@ def main_info_taker():
 
 def description_taker(main_info):
     desc = {}
-    info = []
     for title, link in main_info.items():
-        info.clear()
+        info = []
         r = requests.get(link)
         html_content = BS(r.content, "html.parser")
         news_text = html_content.find("div", "article__body").get_text()
@@ -31,11 +29,9 @@ def description_taker(main_info):
         info.append(news_text)
         info.append(img_link)
         desc[title] = info
+    print(desc)
     return desc
 
 
-main_info = main_info_taker()
-desc = description_taker(main_info)
-inserting.data_correcting(desc)
 
 
