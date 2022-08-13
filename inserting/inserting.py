@@ -14,7 +14,7 @@ def data_correcting(data):
 
 def data_inserting(data_to_insert):
     request = """insert into ria_parse (title, link, description, img) values (%s, %s, %s, %s)"""
-    connection = get_connection.config_reader("D:\RIAparser\database\config.json")
+    connection = get_connection.config_reader("database/config.json")
     cursor = connection.cursor()
     for news in data_to_insert:
         # print(news)
