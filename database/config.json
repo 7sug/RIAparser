@@ -1,7 +1,7 @@
 {
-  "database" : "parse",
-  "user" : "postgres",
-  "password" : "redonu28",
-  "host" : "localhost",
-  "port" : "5432"
+  "database" : "",
+  "user" : "",
+  "password" : "",
+  "host" : "",
+  "port" : ""
 }
